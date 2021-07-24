@@ -1,0 +1,9 @@
+/venv/
+/feature_visualize/output/
+/custom_test_images/*
+
+/feature_visualize/input.jpg
+.idea/
+__pycache__/
+/loss_graph.png
+/weight_output/
