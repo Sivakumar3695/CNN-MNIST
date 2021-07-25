@@ -1,13 +1,17 @@
 # CNN-MNIST
 A vectorized implementation of CNN for MNIST digit recognition. This CNN project is written from the scratch and is not based on any libraries. The vectorization of CNN convolution operation is based on this paper: http://lxu.me/mypapers/vcnn_aaai15.pdf
 
+For those unfamiliar with the MNIST dataset, *Training dataset* refers to 60000 handwritten data in MNIST and *Test dataset* refers to 10000 handwritten data in MNIST
+
 Major operations in this projects are as follows:
 1. MNIST digit recognition training
 2. Recognizing custom handwritten digit images
 3. Feature Visualization 
     - layer and channel wise
     - for the given input image
-4. Evaluating test data for the pre-trained model. NOTE: When a new model is trained, its weights will be stored in a new .npz file. The file name will be in the following format: weight_details{{model_str}}.npz
+4. Evaluating test data with a pre-trained model. 
+
+*NOTE:* When a new model is trained, its weights will be stored in a new .npz file. The file name will be in the following format: weight_details{{model_str}}.npz
     for example: weight_detailsC(16,3)-P2-C(32,3)-P2-C(64,3)-P2-FC512-FC10.npz
     
 Once the training for a new model is done, the following details will be provided:
@@ -16,12 +20,12 @@ Once the training for a new model is done, the following details will be provide
 3. Loss at the end of training
 4. Time taken for the process to complete.
 
-Following packages are pre-requisites to run this project:
+Following packages are prerequisites to run this project:
 1. matplotlib - to generate Means Loss Vs Training Epoch graph, Mean activation value of every channel in a given layer for feature visualization in bar graph formay
 2. keras - to load MNIST training and test dataset
 3. numpy - to carry out vectorised implementation.
 4. opencv - to process custom images provided for digit recognition, to generate feature visualization images based on the Numpy vector data
-5. scipy - scipy.ndimage is needed to calculate centre of mass for the custom handwritten digits to align the digits in the same way MNIST dataset handles. 
+5. scipy - scipy.ndimage is needed to calculate the centre of mass for a custom handwritten digit to align the digit in the same way MNIST dataset handles. 
 
    Important details from MNIST dataset: "
         1. All images are size normalized to fit in a 20x20 pixel box
@@ -92,6 +96,25 @@ The implementation of feature visualization is based on the knowledge gained fro
 To generate an image (from scratch) that excites a given layer and channel to maximum level. The layer and channel will be obtained from the user.
 The generated output will be avialable in the folder ***./feature_visualize/output/*** with the file name: ***feature_visualize_1.jpg***
 
+![Screenshot from 2021-07-25 08-07-05](https://user-images.githubusercontent.com/29046579/126885826-c6cd82bd-4518-4510-a42c-82edce4023e0.png)
+
 
 ## Feature visualization - for a given image:
 To generate a collaged image of the given image (in MNIST image format - black background + white digit) with 3x3 grid and feature visualization images of top 5 channel/units in a given layer that has maximum mean activation value for the given input image.
+Before proceeding with the feature visualization for a given image, please place the input image in the folder ***./feature_visualize/*** with the file name ***input.jpg***. 
+
+The following outputs will be generated in the folder ***./feature_visualize/output/***
+1. Top 5 feature visualize image. The file names will be in the format ***feature_visualize_{{NUMBER}}.jpg***
+2. ***mean_activation_bar.jpg*** => a bar graph showing the mean activation data of every channel in a given layer
+3. ***collaged_feature_visualize.jpg*** =>  collage of the input images with 3x3 grid (color of the digit will be grayed to make comparison) and the top 5 feature visualizing image.
+
+![Screenshot from 2021-07-25 08-23-55](https://user-images.githubusercontent.com/29046579/126886128-e032a031-b5c1-470b-9a2f-9b6eb724792d.png)
+
+To know more about feature visualization in this project, please click here.
+
+# Evaluation of test data with the pre-trained model
+Any pre-trained mode can be used to evaluate the test data at any time. The precision and accuracy details will be computed for the pre-trained model. This feature can be used to know the ability of any pre-trained model in the digit recognition process.
+
+![Screenshot from 2021-07-25 08-25-19](https://user-images.githubusercontent.com/29046579/126886156-5ff2f3ce-6b43-46e4-a8d0-9ee8904f37ed.png)
+
+Based on the inputs provided in the above image, test data will be evaluated for the model C(16,3)-P2-C(32,3)-P2-C(64,3)-P2-FC512-FC10
