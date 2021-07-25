@@ -110,7 +110,7 @@ The following outputs will be generated in the folder ***./feature_visualize/out
 
 ![Screenshot from 2021-07-25 08-23-55](https://user-images.githubusercontent.com/29046579/126886128-e032a031-b5c1-470b-9a2f-9b6eb724792d.png)
 
-To know more about feature visualization in this project, please click [here](https://github.com/Sivakumar3695/CNN-MNIST/wiki/Feature-Visualization){:target="_blank"}
+To know more about feature visualization in this project, please click [here](https://github.com/Sivakumar3695/CNN-MNIST/wiki/Feature-Visualization)
 
 # Evaluation of test data with the pre-trained model
 Any pre-trained mode can be used to evaluate the test data at any time. The precision and accuracy details will be computed for the pre-trained model. This feature can be used to know the ability of any pre-trained model in the digit recognition process.
