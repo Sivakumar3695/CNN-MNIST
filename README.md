@@ -1,7 +1,7 @@
 # CNN-MNIST
 A vectorized implementation of CNN for MNIST digit recognition. This CNN project is written from the scratch and is not based on any libraries. The vectorization of CNN convolution operation is based on this paper: http://lxu.me/mypapers/vcnn_aaai15.pdf
 
-For those unfamiliar with the MNIST dataset, *Training dataset* refers to 60000 handwritten data in MNIST and *Test dataset* refers to 10000 handwritten data in MNIST
+For those unfamiliar with the MNIST dataset, *Training dataset* contains 60000 handwritten data in MNIST and *Test dataset* contains 10000 handwritten data in MNIST
 
 Major operations in this projects are as follows:
 1. MNIST digit recognition training
