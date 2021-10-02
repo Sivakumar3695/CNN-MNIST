@@ -1,13 +1,13 @@
 # CNN-MNIST
 A vectorized implementation of CNN for MNIST digit recognition. This CNN project is written from the scratch and is not based on any libraries. The vectorization of CNN convolution operation is based on this paper: http://lxu.me/mypapers/vcnn_aaai15.pdf
 
-For those unfamiliar with the MNIST dataset, *Training dataset* contains 60000 handwritten data in MNIST and *Test dataset* contains 10000 handwritten data in MNIST
+For those unfamiliar with the MNIST dataset, the *Training dataset* contains 60000 handwritten data in MNIST and the *Test dataset* contains 10000 handwritten data in MNIST
 
-Major operations in this projects are as follows:
+Major operations in this project are as follows:
 1. MNIST digit recognition training
 2. Recognizing custom handwritten digit images
 3. Feature Visualization 
-    - layer and channel wise
+    - layer and channel-wise
     - for the given input image
 4. Evaluating test data with a pre-trained model. 
 
@@ -17,22 +17,22 @@ Major operations in this projects are as follows:
 Once the training for a new model is done, the following details will be provided:
 1. Accuracy
 2. Prediction
-3. Loss at the end of training
+3. Loss at the end of the training
 4. Time taken for the process to complete.
 
 Following packages are prerequisites to run this project:
-1. matplotlib - to generate Means Loss Vs Training Epoch graph, Mean activation value of every channel in a given layer for feature visualization in bar graph formay
-2. keras - to load MNIST training and test dataset
-3. numpy - to carry out vectorised implementation.
-4. opencv - to process custom images provided for digit recognition, to generate feature visualization images based on the Numpy vector data
-5. scipy - scipy.ndimage is needed to calculate the centre of mass for a custom handwritten digit to align the digit in the same way MNIST dataset handles. 
+1. Matplotlib - to generate Means Loss Vs Training Epoch graph, Mean activation value of every channel in a given layer for feature visualization in bar graph format
+2. Keras - to load MNIST training and test dataset
+3. NumPy - to carry out vectorised implementation.
+4. OpenCV - to process custom images provided for digit recognition, to generate feature visualization images based on the Numpy vector data
+5. SciPy - scipy.ndimage is needed to calculate the centre of mass for a custom handwritten digit to align the digit in the same way the MNIST dataset handles. 
 
    Important details from MNIST dataset: "
         1. All images are size normalized to fit in a 20x20 pixel box
-        2. Digits are centered in a 28x28 image using the center of mass
-        3. Digits are written in white color in black background" 
+        2. Digits are centred in a 28x28 image using the centre of mass
+        3. Digits are written in white colour in black background" 
         
-Based on this information, the user provided input images are altered to make them predictable by the pre-trained model.
+Based on this information, the user-provided input images are altered to make them predictable by the pre-trained model.
 
 # Training a model
 To keep things simple, 3 pre-trained models are already available in the repo. 
